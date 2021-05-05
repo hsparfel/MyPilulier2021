@@ -10,155 +10,115 @@
 9        android:targetSdkVersion="28" />
 9-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml
 10
-11    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-11-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:5:5-80
-11-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:5:22-78
-12    <uses-permission android:name="android.permission.CAMERA" />
-12-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:6:5-64
-12-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:6:22-62
-13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-13-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:7:5-80
-13-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:7:22-78
-14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-14-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:8:5-79
-14-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:8:22-76
-15
-16    <uses-feature android:name="android.hardware.camera" />
-16-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:10:5-60
-16-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:10:19-57
-17
-18    <application
-18-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:12:5-80:19
-19        android:allowBackup="true"
-19-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:14:9-35
-20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.3.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\897c9b834511e8f7f900e81cb9ab2f0f\core-1.3.1\AndroidManifest.xml:24:18-86
-21        android:debuggable="true"
-22        android:extractNativeLibs="false"
-23        android:icon="@mipmap/icons8_main_pilule"
-23-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:15:9-50
-24        android:label="@string/app_name"
-24-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:16:9-41
-25        android:roundIcon="@mipmap/icons8_main_pilule"
-25-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:17:9-55
-26        android:supportsRtl="true"
-26-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:18:9-35
-27        android:testOnly="true"
-28        android:theme="@style/AppTheme" >
-28-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:19:9-40
-29        <meta-data
-29-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:22:9-24:46
-30            android:name="DATABASE"
-30-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:23:13-36
-31            android:value="my_pilulier.db" />
-31-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:24:13-43
-32        <meta-data
-32-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:25:9-28:33
-33            android:name="VERSION"
-33-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:26:13-35
-34            android:value="1" />
-34-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:28:13-30
-35        <meta-data
-35-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:30:9-32:36
-36            android:name="QUERY_LOG"
-36-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:31:13-37
-37            android:value="true" />
-37-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:32:13-33
-38        <meta-data
-38-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:33:9-35:55
-39            android:name="DOMAIN_PACKAGE_NAME"
-39-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:34:13-47
-40            android:value="com.pouillos.mypilulier" />
-40-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:35:13-52
-41
-42        <activity
-42-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:38:9-39:56
-43            android:name="com.pouillos.mypilulier.activities.add.AddPrescriptionActivity"
-43-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:38:19-73
-44            android:windowSoftInputMode="stateHidden" />
-44-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:39:13-54
-45        <activity android:name="com.pouillos.mypilulier.activities.AccueilActivity" >
-45-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:41:9-46:20
-45-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:41:19-61
-46            <intent-filter>
-46-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:42:13-45:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:43:17-69
-47-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:43:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:44:17-77
-49-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:44:27-74
-50            </intent-filter>
-51        </activity>
-52        <!-- <activity android:name=".activities.graphique.BarToLineChartActivity" /> -->
-53
-54        <activity android:name="com.pouillos.mypilulier.activities.tools.ImportMedicamentActivity" />
-54-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:50:9-79
-54-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:50:19-76
-55        <!-- <receiver android:name=".activities.tools.MyBroadcastReceiver" ></receiver> -->
-56        <!--
-57        <receiver android:name = ".activities.tools.MyNotificationBroadcastReceiver" >
-58            <intent-filter>
-59                <action android:name = "android.hardware.usb.action.USB_STATE" />
-60            </intent-filter>
-61        </receiver>
-62        -->
-63
-64        <receiver android:name="com.pouillos.mypilulier.activities.tools.Alarm" >
-64-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:58:9-63:20
-64-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:58:19-58
-65            <intent-filter>
-65-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:59:13-62:29
-66                <action android:name="android.intent.action.BOOT_COMPLETED" />
-66-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:60:17-79
-66-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:60:25-76
-67                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-67-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:61:17-82
-67-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:61:25-79
-68            </intent-filter>
-69        </receiver>
-70        <receiver android:name="com.pouillos.mypilulier.activities.tools.ReminderBroadcast" >
-70-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:64:9-69:20
-70-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:64:19-70
-71            <intent-filter>
-71-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:59:13-62:29
-72                <action android:name="android.intent.action.BOOT_COMPLETED" />
-72-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:60:17-79
-72-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:60:25-76
-73                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-73-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:61:17-82
-73-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:61:25-79
-74            </intent-filter>
-75        </receiver>
-76
-77        <provider
-77-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:71:9-79:20
-78            android:name="androidx.core.content.FileProvider"
-78-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:72:13-62
-79            android:authorities="com.pouillos.mypilulier.fileprovider"
-79-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:73:13-71
-80            android:exported="false"
-80-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:74:13-37
-81            android:grantUriPermissions="true" >
-81-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:75:13-47
-82            <meta-data
-82-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:76:13-78:53
-83                android:name="android.support.FILE_PROVIDER_PATHS"
-83-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:77:17-67
-84                android:resource="@xml/filepaths" />
-84-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:78:17-50
-85        </provider>
-86        <provider
-86-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-87            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-87-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-88            android:authorities="com.pouillos.mypilulier.lifecycle-process"
-88-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-89            android:exported="false"
-89-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-90            android:multiprocess="true" />
-90-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-91    </application>
-92
-93</manifest>
+11    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+11-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:11:5-76
+11-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:11:22-73
+12
+13    <application
+13-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:5:5-40:19
+14        android:name="com.pouillos.mypilulier.MyApp"
+14-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:6:9-30
+15        android:allowBackup="true"
+15-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:7:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.3.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\897c9b834511e8f7f900e81cb9ab2f0f\core-1.3.1\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:extractNativeLibs="false"
+19        android:icon="@mipmap/icons8_main_pilule"
+19-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:9:9-50
+20        android:label="@string/app_name"
+20-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:10:9-41
+21        android:roundIcon="@mipmap/icons8_main_pilule"
+21-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:11:9-55
+22        android:supportsRtl="true"
+22-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:12:9-35
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme" >
+24-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:13:9-40
+25        <meta-data
+25-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:15:9-17:46
+26            android:name="DATABASE"
+26-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:16:13-36
+27            android:value="my_pilulier.db" />
+27-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:17:13-43
+28        <meta-data
+28-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:18:9-20:33
+29            android:name="VERSION"
+29-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:19:13-35
+30            android:value="1" />
+30-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:20:13-30
+31        <meta-data
+31-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:21:9-23:36
+32            android:name="QUERY_LOG"
+32-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:22:13-37
+33            android:value="true" />
+33-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:23:13-33
+34        <meta-data
+34-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:24:9-26:55
+35            android:name="DOMAIN_PACKAGE_NAME"
+35-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:25:13-47
+36            android:value="com.pouillos.mypilulier" />
+36-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:26:13-52
+37
+38        <activity
+38-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:28:9-29:56
+39            android:name="com.pouillos.mypilulier.activities.add.AddPrescriptionActivity"
+39-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:28:19-73
+40            android:windowSoftInputMode="stateHidden" />
+40-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:29:13-54
+41        <activity android:name="com.pouillos.mypilulier.activities.AccueilActivity" >
+41-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:31:9-36:20
+41-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:31:19-61
+42            <intent-filter>
+42-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:32:13-35:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:33:17-69
+43-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:33:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:34:17-77
+45-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:34:27-74
+46            </intent-filter>
+47        </activity>
+48        <activity android:name="com.pouillos.mypilulier.activities.tools.ImportMedicamentActivity" />
+48-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:38:9-79
+48-->C:\Users\TNH\AndroidStudioProjects\MyPilulier2021\app\src\main\AndroidManifest.xml:38:19-76
+49
+50        <receiver
+50-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:14:9-17:39
+51            android:name="com.allyants.notifyme.BootNotifyMe"
+51-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:15:13-62
+52            android:enabled="true"
+52-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:16:13-35
+53            android:exported="true" />
+53-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:17:13-36
+54        <receiver
+54-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:18:9-21:39
+55            android:name="com.allyants.notifyme.ActionReceiver"
+55-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:19:13-64
+56            android:enabled="true"
+56-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:20:13-35
+57            android:exported="true" />
+57-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:21:13-36
+58        <receiver
+58-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:22:9-25:39
+59            android:name="com.allyants.notifyme.DeletePendingIntent"
+59-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:23:13-69
+60            android:enabled="true"
+60-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:24:13-35
+61            android:exported="true" />
+61-->[com.github.jakebonk:NotifyMe:1.0.1] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\4246890fc4193accc7ed2487953a0f89\jetified-NotifyMe-1.0.1\AndroidManifest.xml:25:13-36
+62
+63        <provider
+63-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+64            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+64-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+65            android:authorities="com.pouillos.mypilulier.lifecycle-process"
+65-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+66            android:exported="false"
+66-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+67            android:multiprocess="true" />
+67-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\TNH\.gradle\caches\transforms-2\files-2.1\e53e565f480f786b632a4e97f8ee4f77\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+68    </application>
+69
+70</manifest>

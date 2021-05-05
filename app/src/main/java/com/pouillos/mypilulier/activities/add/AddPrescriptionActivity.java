@@ -1,6 +1,7 @@
 package com.pouillos.mypilulier.activities.add;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 import icepick.Icepick;
 import icepick.State;
 
@@ -189,19 +191,7 @@ public class AddPrescriptionActivity extends NavDrawerActivity implements BasicU
                 prise.setMedicament(medicamentSelected);
                 prise.setQteDose(Float.parseFloat(textQuantite.getText().toString()));
                 priseDao.insert((prise));
-                //startAlert(prise,this);
-                String shortDenomination = prise.getMedicament().getDenomination().length()>19 ? prise.getMedicament().getDenomination().substring(0,19) : prise.getMedicament().getDenomination();
-                String textNotif = prise.getQteDose()+" "+recupDose(prise.getMedicament()).getName()+" "+shortDenomination;
-               // scheduleNotification(this,prise.getDate().getTime(),"MyPilulier",textNotif);
-                //scheduleNotification(getNotification(textNotif),prise.getDate().getTime()) ;
-                /*WorkRequest work = new PeriodicWorkRequest.Builder(MyWorker.class, 1, TimeUnit.DAYS)
-                        .setInitialDelay(1, TimeUnit.MINUTES)
-                        .build()
-                        ;
-                WorkManager.getInstance(this).enqueue(work);*/
-                notifSchedule(prise,this);
-                //scheduleAlarm(prise,this);
-                //notifSchedule(prescription,this);
+
                 date = ajouterJour(date,1);
             }
     }

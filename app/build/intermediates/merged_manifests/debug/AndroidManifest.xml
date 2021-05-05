@@ -8,14 +8,10 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="28" />
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
 
     <application
+        android:name="com.pouillos.mypilulier.MyApp"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -49,40 +45,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".activities.graphique.BarToLineChartActivity" /> -->
-
         <activity android:name="com.pouillos.mypilulier.activities.tools.ImportMedicamentActivity" />
-        <!-- <receiver android:name=".activities.tools.MyBroadcastReceiver" ></receiver> -->
-        <!--
-        <receiver android:name = ".activities.tools.MyNotificationBroadcastReceiver" >
-            <intent-filter>
-                <action android:name = "android.hardware.usb.action.USB_STATE" />
-            </intent-filter>
-        </receiver>
-        -->
 
-        <receiver android:name="com.pouillos.mypilulier.activities.tools.Alarm" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.pouillos.mypilulier.activities.tools.ReminderBroadcast" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
+        <receiver
+            android:name="com.allyants.notifyme.BootNotifyMe"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name="com.allyants.notifyme.ActionReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name="com.allyants.notifyme.DeletePendingIntent"
+            android:enabled="true"
+            android:exported="true" />
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.pouillos.mypilulier.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
-        </provider>
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
             android:authorities="com.pouillos.mypilulier.lifecycle-process"

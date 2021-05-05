@@ -41,7 +41,7 @@ public class DateUtils {
 
         String dateMaj = "";
         dateMaj += mapJours.get(dayOfWeek)+" ";
-        dateMaj += dayOfWeek+" ";
+        dateMaj += c.get(Calendar.DAY_OF_MONTH)+" ";
         dateMaj += mapMois.get(month)+" ";
         dateMaj += date.getYear()+1900;
 

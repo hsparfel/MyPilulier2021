@@ -5,15 +5,15 @@
         android:icon="@drawable/outline_home_black_24dp"
         android:title="@string/home"/>
     <item
-        android:id="@+id/bottom_navigation_search_doctor"
+        android:id="@+id/bottom_navigation_add_prescritpion"
         android:enabled="true"
         android:icon="@drawable/medicine_medical_pharmacy_health_prescription_pill_drug_icon_140910"
         android:title="+ Prescription"/>
 
     <item
-        android:id="@+id/bottom_navigation_cancel_alarm"
+        android:id="@+id/bottom_navigation_raz_prescription"
         android:enabled="true"
-        android:icon="@drawable/baseline_alarm_off_black_18dp"
-        android:title="RAZ Alarmes"/>
+        android:icon="@drawable/outline_delete_black_24dp"
+        android:title="RAZ Prescript."/>
 
 </menu>

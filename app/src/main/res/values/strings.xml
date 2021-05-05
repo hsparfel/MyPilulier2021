@@ -7,7 +7,6 @@
     <string name="text_date">Date</string>
 
     <!-- Used in NavigationDrawer -->
-    <string name="text_DB_created">Creation BD terminée</string>
 
     <string name="add_exam">+ Examen</string>
     <string name="add_analyse">+ Analyse</string>

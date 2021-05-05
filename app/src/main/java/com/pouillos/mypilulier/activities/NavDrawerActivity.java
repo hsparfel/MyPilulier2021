@@ -1,20 +1,13 @@
 package com.pouillos.mypilulier.activities;
 
 
-import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,15 +15,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.allyants.notifyme.NotifyMe;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.pouillos.mypilulier.MyApp;
 import com.pouillos.mypilulier.R;
 import com.pouillos.mypilulier.activities.add.AddPrescriptionActivity;
-import com.pouillos.mypilulier.activities.tools.Alarm;
-import com.pouillos.mypilulier.activities.tools.ReminderBroadcast;
 
+import com.pouillos.mypilulier.activities.utils.DateUtils;
 import com.pouillos.mypilulier.dao.AssociationFormeDoseDao;
 import com.pouillos.mypilulier.dao.DaoMaster;
 import com.pouillos.mypilulier.dao.DaoSession;
@@ -55,6 +48,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.concurrent.Executor;
+
 
 import icepick.Icepick;
 
@@ -82,7 +76,6 @@ public class NavDrawerActivity extends AppCompatActivity implements BasicUtils {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initialiserDao();
-        createNotificationChannel();
         associationFormeDoseDao = daoSession.getAssociationFormeDoseDao();
         doseDao = daoSession.getDoseDao();
         formePharmaceutiqueDao = daoSession.getFormePharmaceutiqueDao();
@@ -124,12 +117,11 @@ public class NavDrawerActivity extends AppCompatActivity implements BasicUtils {
                             case R.id.bottom_navigation_home:
                                 ouvrirActiviteSuivante(NavDrawerActivity.this, AccueilActivity.class, true);
                                 break;
-                            case R.id.bottom_navigation_search_doctor:
+                            case R.id.bottom_navigation_add_prescritpion:
                                 ouvrirActiviteSuivante(NavDrawerActivity.this, AddPrescriptionActivity.class, true);
                                 break;
-                            case R.id.bottom_navigation_cancel_alarm:
-                                //ouvrirActiviteSuivante(NavDrawerActivity.this, AddPrescriptionActivity.class, true);
-                                cancelAlarmDialog();
+                            case R.id.bottom_navigation_raz_prescription:
+                                razDb();
                                 break;
                         }
                         return true;
@@ -137,30 +129,9 @@ public class NavDrawerActivity extends AppCompatActivity implements BasicUtils {
                 });
     }
 
-    public void cancelAlarmDialog() {
-        new MaterialAlertDialogBuilder(this)
-                .setTitle("Annuler Alarmes")
-                .setMessage("Suppression de toutes les alarmes")
-                .setPositiveButton("OUI", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        razAlarmes();
-                    }
-                })
-                .setNegativeButton("NON", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(NavDrawerActivity.this, "RAZ Annulé", Toast.LENGTH_LONG).show();
-                    }
-                })
-                .show();
-    }
-
-    public void razAlarmes() {
-        List<Prise> listPrise = priseDao.loadAll();
-        for (Prise prise : listPrise) {
-            cancelAlarm(prise,this);
-        }
+    public void razDb() {
+        prescriptionDao.deleteAll();
+        priseDao.deleteAll();
     }
 
     public void configureToolBar() {
@@ -233,7 +204,7 @@ public class NavDrawerActivity extends AppCompatActivity implements BasicUtils {
     public Date initDate(Date date) {
         GregorianCalendar calendar = new java.util.GregorianCalendar();
         calendar.setTime(date);
-        calendar.set(Calendar.HOUR_OF_DAY,8);
+        calendar.set(Calendar.HOUR_OF_DAY,7);
         calendar.set(Calendar.MINUTE,0);
         calendar.set(Calendar.SECOND,0);
         calendar.set(Calendar.MILLISECOND,0);
@@ -249,65 +220,6 @@ public class NavDrawerActivity extends AppCompatActivity implements BasicUtils {
         //calendar.add(Calendar.MINUTE,1);
         date = calendar.getTime();
         return date;
-    }
-
-    protected void createNotificationChannel(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "MyPilulierNotificationChannel";
-            String descripton = "Channel for notification of MyPilulier";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-
-            NotificationChannel channel = new NotificationChannel("notifyPrise", name, importance);
-            channel.setDescription(descripton);
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
-
-    protected void scheduleAlarm(Prise prise, Context context) {
-        AlarmManager alarmManager=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent= new Intent(context, Alarm.class);
-        int requestId = ((Long) prise.getDate().getTime()).intValue()+prise.getId().intValue();
-        PendingIntent pendingIntent=PendingIntent.getBroadcast(context,requestId,intent,0);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP,prise.getDate().getTime(),pendingIntent);
-        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent);
-        //Toast.makeText(this,"Your Alarm is Set",Toast.LENGTH_LONG).show();
-    }
-
-    protected void cancelAlarm(Prise prise, Context context) {
-        AlarmManager alarmManager=(AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent= new Intent(context, Alarm.class);
-        int requestId = ((Long) prise.getDate().getTime()).intValue()+prise.getId().intValue();
-        PendingIntent pendingIntent=PendingIntent.getBroadcast(context,requestId,intent,0);
-        alarmManager.cancel(pendingIntent);
-        //Toast.makeText(this,"Your Alarm is Cancel",Toast.LENGTH_LONG).show();
-
-    }
-
-
-    protected void notifSchedule(Prise prise, Context context) {
-        Intent intent = new Intent(context, ReminderBroadcast.class);
-        //int requestId = ((Long) new Date().getTime()).intValue();
-        int requestId = ((Long) prise.getDate().getTime()).intValue()+prise.getId().intValue();
-        String string = "";
-        if (BasicUtils.isInteger(prise.getQteDose())) {
-            string += Math.round(prise.getQteDose());
-        } else {
-            string += prise.getQteDose();
-        }
-        string +=" "+prise.getDose().getName() + " - ";
-        if (prise.getMedicament().getDenomination().length()>17) {
-            string += prise.getMedicament().getDenomination().substring(0,16)+"...";
-        } else {
-            string += prise.getMedicament().getDenomination();
-        }
-        intent.putExtra("content",string);
-        intent.putExtra("requestId",requestId);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestId, intent, 0);
-
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, prise.getDate().getTime(),pendingIntent);
     }
 
     protected Date findDateJour() {

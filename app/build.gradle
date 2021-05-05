@@ -72,4 +72,11 @@ dependencies {
     implementation 'com.github.MikeOrtiz:TouchImageView:3.0.1'
 
     implementation 'com.github.ShawnLin013:NumberPicker:2.4.9'
+
+  
+    //notifier
+    //implementation 'com.github.AntonyDalmiere:NotificationScheduler:master-SNAPSHOT'
+
+    //notifier #2
+    implementation 'com.github.jakebonk:NotifyMe:1.0.1'
 }

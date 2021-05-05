@@ -2,13 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pouillos.mypilulier">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-feature android:name="android.hardware.camera" />
-
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -19,22 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
         <meta-data
             android:name="DATABASE"
             android:value="my_pilulier.db" />
         <meta-data
             android:name="VERSION"
-
             android:value="1" />
-
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.pouillos.mypilulier" />
-
 
         <activity android:name=".activities.add.AddPrescriptionActivity"
             android:windowSoftInputMode="stateHidden"/>
@@ -45,81 +34,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--    <activity android:name=".activities.graphique.BarToLineChartActivity" /> -->
-
 
         <activity android:name=".activities.tools.ImportMedicamentActivity" />
-        <!-- <receiver android:name=".activities.tools.MyBroadcastReceiver" ></receiver> -->
-        <!-- <receiver android:name = ".activities.tools.MyNotificationBroadcastReceiver" >
-            <intent-filter>
-                <action android:name = "android.hardware.usb.action.USB_STATE" />
-            </intent-filter>
-        </receiver> -->
 
-        <receiver android:name= ".activities.tools.Alarm" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name= ".activities.tools.ReminderBroadcast" >
-         <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-            </intent-filter>
-        </receiver>
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.pouillos.mypilulier.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
-        </provider>
-        <provider
-            android:name=".provider.PriseContentProvider"
-            android:authorities="com.pouillos.mypilulier.provider"
-
-            android:exported="true"
-            android:enabled="true"
-            android:multiprocess="true"/>
-        <provider
-            android:name=".provider.AssociationFormeDoseContentProvider"
-            android:authorities="com.pouillos.mypilulier.provider"
-
-            android:exported="true"
-            android:enabled="true"
-            android:multiprocess="true"/>
-        <provider
-            android:name=".provider.DoseContentProvider"
-            android:authorities="com.pouillos.mypilulier.provider"
-
-            android:exported="true"
-            android:enabled="true"
-            android:multiprocess="true"/>
-        <provider
-            android:name=".provider.FormePharmaceutiqueContentProvider"
-            android:authorities="com.pouillos.mypilulier.provider"
-
-            android:exported="true"
-            android:enabled="true"
-            android:multiprocess="true"/>
-        <provider
-            android:name=".provider.MedicamentContentProvider"
-            android:authorities="com.pouillos.mypilulier.provider"
-
-            android:exported="true"
-            android:enabled="true"
-            android:multiprocess="true"/>
-        <provider
-            android:name=".provider.PrescriptionContentProvider"
-            android:authorities="com.pouillos.mypilulier.provider"
-
-            android:exported="true"
-            android:enabled="true"
-            android:multiprocess="true"/>
     </application>
 
 </manifest>

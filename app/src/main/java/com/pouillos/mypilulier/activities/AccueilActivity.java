@@ -97,17 +97,7 @@ public class AccueilActivity extends NavDrawerActivity implements BasicUtils, Re
        }
     }
 
-    public void razDb(View view) {
-       /* ImportMedicament current = importMedicamentDao.load(0l);
-        current.setImportCompleted(false);
-        importMedicamentDao.update(current);
-        importMedicamentDao.deleteAll();
-       // formePharmaceutiqueDao.deleteAll();
-        medicamentDao.deleteAll();*/
-     //   associationFormeDoseDao.deleteAll();
-        prescriptionDao.deleteAll();
-        priseDao.deleteAll();
-    }
+
 
     public void importMedicament(View view) {
         progressBar.setVisibility(View.VISIBLE);

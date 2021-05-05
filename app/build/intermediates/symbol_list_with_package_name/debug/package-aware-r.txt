@@ -1715,6 +1715,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_check_circle
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_mtrl_checked_circle
@@ -1854,9 +1855,9 @@ id beginning
 id blocking
 id bottom
 id bottom_navigation
-id bottom_navigation_cancel_alarm
+id bottom_navigation_add_prescritpion
 id bottom_navigation_home
-id bottom_navigation_search_doctor
+id bottom_navigation_raz_prescription
 id bounce
 id btn_import
 id buttonPanel
@@ -2282,6 +2283,7 @@ layout abc_tooltip
 layout activity_accueil
 layout activity_add_prescription
 layout activity_import_medicament
+layout activity_temp
 layout bottom_navigation
 layout custom_dialog
 layout design_bottom_navigation_item
